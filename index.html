@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=2.5">
+<title>Guía Digital Ciudadana</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("fondo3.jpg");
+    background-size: cover;
+}
+
+/* Menú */
+nav {
+    background: #0000FF;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background: #FFC0CB;
+}
+
+/* Submenu */
+nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #444;
+    min-width: 180px;
+}
+
+nav ul li ul li a {
+    padding: 10px 15px;
+}
+
+nav ul li:hover > ul {
+    display: block;
+}
+
+/* 🔹 Estilo responsive */
+@media (max-width: 650px) {
+    nav ul {
+        flex-direction: column;
+    }
+    nav ul li ul {
+        position: static;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+    <ul>
+        <li><img src="cecytem-logo.png" width="60"></li>
+
+        <li>
+            <form action="https://www.google.com/search" method="get">
+                <input type="text" name="q" placeholder="Buscar en Google">
+                <input type="submit" value="Buscar">
+            </form>
+        </li>
+
+        <li><a href="INFO.html">INFORMACION</a></li>
+
+        <li><a href="">...</a></li>
+
+        <li><a href="">....</a></li>
+
+        <li>
+            <a href="">...</a>
+            <ul>
+                <li><a href="">...</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="">...</a>
+            <ul>
+                <li><a href="">...</a></li>
+                <li><a href="">..</a></li>
+            </ul>
+        </li>
+        <li>
+         <li><a href="">...</a></li>  <!--Flecha indicando subtema-->
+       </li>
+
+        
+
+      
+</nav>
+
+</body>
+</html>
