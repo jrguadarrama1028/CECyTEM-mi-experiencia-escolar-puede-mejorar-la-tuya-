@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinergia Educativa: Familia y Escuela</title>
+    <style>
+        :root {
+            --primary: #1a5f7a; /* Azul Petróleo */
+            --secondary: #159895; /* Turquesa */
+            --accent: #eb455f; /* Coral para detalles */
+            --light-bg: #f0f4f8;
+            --white: #ffffff;
+            --dark-text: #2d3436;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        /* --- NAVEGACIÓN MODERNA --- */
+        nav {
+            background: var(--white);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.4rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* --- CONTENEDOR PRINCIPAL --- */
+        .container {
+            max-width: 1200px;
+            margin: -50px auto 80px;
+            padding: 0 20px;
+        }
+
+        .intro-box {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        /* --- GRID DE COLABORACIÓN --- */
+        .grid-colaboracion {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid var(--secondary);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-top: 0;
+            border-bottom: 2px solid var(--light-bg);
+            padding-bottom: 10px;
+        }
+
+        .card ul {
+            padding-left: 20px;
+            margin-top: 15px;
+        }
+
+        .card li {
+            margin-bottom: 12px;
+            position: relative;
+            list-style: none;
+        }
+
+        .card li::before {
+            content: '✓';
+            color: var(--secondary);
+            font-weight: bold;
+            position: absolute;
+            left: -20px;
+        }
+
+        /* --- FOOTER / CIERRE --- */
+        .conclusion {
+            margin-top: 60px;
+            background: var(--primary);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            nav { flex-direction: column; gap: 15px; }
+            .hero { clip-path: none; padding: 60px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">EduAlianza</div>
+    <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Recursos</a></li>
+        <li><a href="#">Contacto</a></li>
+    </ul>
+</nav>
+
+<header class="hero">
+    <h1>El Papel de la Familia y la Escuela</h1>
+    <p>Construyendo puentes para el éxito y bienestar integral del estudiante</p>
+</header>
+
+<div class="container">
+    <div class="intro-box">
+        <h2>La Importancia de la Colaboración</h2>
+        <p>Cuando la familia y la escuela trabajan en sintonía, se crea un ecosistema de aprendizaje sólido que no solo mejora las calificaciones, sino que fortalece la seguridad emocional del alumno.</p>
+    </div>
+
+    <div class="grid-colaboracion">
+        <div class="card">
+            <h3>Apoyo Emocional en Casa</h3>
+            <p>El hogar es el primer entorno de validación. Un ambiente afectivo es la base de la confianza escolar.</p>
+            <ul>
+                <li><b>Validación de esfuerzos:</b> Valorar el proceso y la dedicación antes que solo la nota numérica.</li>
+                <li><b>Gestión del estrés:</b> Ayudar al estudiante a manejar la frustración ante retos académicos.</li>
+                <li><b>Sentido de pertenencia:</b> Fomentar que el alumno se sienta respaldado sin importar sus resultados.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Comunicación con Docentes</h3>
+            <p>Un diálogo fluido entre padres y maestros permite detectar áreas de oportunidad de forma temprana.</p>
+            <ul>
+                <li><b>Canales abiertos:</b> Participación activa en reuniones y plataformas institucionales.</li>
+                <li><b>Retroalimentación mutua:</b> Compartir información relevante sobre el comportamiento del alumno en ambos entornos.</li>
+                <li><b>Resolución de conflictos:</b> Abordar problemas de manera constructiva y proactiva.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Seguimiento Académico</h3>
+            <p>No se trata de hacer la tarea por ellos, sino de acompañarlos en su proceso de autonomía.</p>
+            <ul>
+                <li><b>Hábitos de estudio:</b> Establecer rutinas y espacios adecuados para el aprendizaje en casa.</li>
+                <li><b>Monitoreo de progreso:</b> Revisar periódicamente el cumplimiento de metas y tareas.</li>
+                <li><b>Refuerzo de curiosidad:</b> Conectar los temas escolares con situaciones de la vida real.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="conclusion">
+        <h3>"La educación es un trabajo en equipo: la escuela enseña, la familia educa y juntos forman ciudadanos."</h3>
+    </div>
+</div>
+
+</body>
+</html>
