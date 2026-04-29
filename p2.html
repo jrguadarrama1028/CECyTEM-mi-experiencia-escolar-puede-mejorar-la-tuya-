@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consecuencias del Abandono Escolar</title>
+    <style>
+        :root {
+            --primario: #b01c1c; 
+            --secundario: #2c3e50; 
+            --fondo: #f9f9f9;
+            --blanco: #ffffff;
+            --texto: #2c3e50;
+            --acento: #e74c3c;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--fondo);
+            color: var(--texto);
+            line-height: 1.8;
+        }
+
+        /* --- NAVEGACIÓN --- */
+        nav {
+            background: var(--secundario);
+            padding: 10px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .search-box {
+            display: flex;
+            background: white;
+            border-radius: 20px;
+            padding: 5px 15px;
+        }
+
+        .search-box input {
+            border: none;
+            outline: none;
+            padding: 5px;
+        }
+
+        /* --- HERO --- */
+        .header-impacto {
+            background: linear-gradient(135deg, #2c3e50 0%, #000000 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .header-impacto h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* --- CONTENIDO --- */
+        .main-container {
+            max-width: 1100px;
+            margin: -40px auto 60px;
+            background: var(--blanco);
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .intro-text {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            color: #555;
+        }
+
+        /* --- SECCIONES DETALLADAS --- */
+        .info-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .info-card {
+            padding: 25px;
+            border-radius: 8px;
+            background: #fff;
+            border: 1px solid #eee;
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            border-color: var(--acento);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .info-card h3 {
+            color: var(--primario);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-card p {
+            font-size: 0.95rem;
+            text-align: justify;
+        }
+
+        .highlight-list {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .highlight-list li {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: #444;
+        }
+
+        @media (max-width: 850px) {
+            .info-section { grid-template-columns: 1fr; }
+            .main-container { margin: 20px; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <img src="cecytem-logo.png" width="50" alt="Logo">
+    <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Información</a></li>
+        <li class="search-box">
+            <form action="https://www.google.com/search" method="get">
+                <input type="text" name="q" placeholder="Buscar...">
+            </form>
+        </li>
+    </ul>
+</nav>
+
+<header class="header-impacto">
+    <h1>Consecuencias del Abandono Escolar</h1>
+    <p>Entendiendo los riesgos de interrumpir la formación académica</p>
+</header>
+<center>
+<video class="videoresponsive"controls><source src="vi2.mp4"type="video/mp4"></video>
+    <style>
+    .videoresponsive{
+           width:200px;
+           height:200px;
+           justify-content:center;
+           }
+           </center>
+            </style>
+<div class="main-container">
+    <p class="intro-text">
+        Dejar los estudios no es solo una decisión académica; es una decisión que altera el rumbo de la vida personal, financiera y social de un individuo a largo plazo.
+    </p>
+ 
+    
+    <div class="info-section">
+        <div class="info-card">
+            <h3> Oportunidades Laborales Escasas</h3>
+            <p>
+                El mercado de trabajo actual es altamente competitivo y está impulsado por la tecnología. No contar con un certificado de estudios limita tu acceso a empleos formales:
+            </p>
+            <ul class="highlight-list">
+                <li><b>Exclusión de filtros:</b> Los sistemas de selección automáticos descartan perfiles sin educación básica concluida.</li>
+                <li><b>Trabajos de alta exigencia física:</b> Sin especialización, las opciones suelen reducirse a empleos con mayor desgaste físico y menos beneficios.</li>
+                <li><b>Inestabilidad:</b> Mayor probabilidad de ser reemplazado por la automatización o cambios en la industria.</li>
+            </ul>
+
+        </div>
+
+
+        <div class="info-card">
+            <h3> Inestabilidad Económica</h3>
+            <p>
+                Existe una correlación directa entre el nivel educativo y los ingresos percibidos a lo largo de la vida laboral:
+            </p>
+            <ul class="highlight-list">
+                <li><b>Brecha salarial:</b> Una persona con estudios concluidos puede ganar, en promedio, entre un 30% y un 60% más que alguien que no terminó.</li>
+                <li><b>Falta de prestaciones:</b> Los empleos informales carecen de seguro médico, fondos de retiro y vacaciones pagadas.</li>
+                <li><b>Dificultad de ahorro:</b> Los salarios bajos dificultan la creación de un patrimonio o la inversión en el futuro.</li>
+            </ul>
+        </div>
+
+        <div class="info-card">
+            <h3> Limitaciones en el Desarrollo</h3>
+            <p>
+                La educación no solo enseña materias, sino habilidades críticas para la vida diaria y la resolución de problemas:
+            </p>
+            <ul class="highlight-list">
+                <li><b>Pensamiento Crítico:</b> La escuela fomenta la capacidad de analizar información y evitar fraudes o malas decisiones.</li>
+                <li><b>Crecimiento estancado:</b> Sin una base educativa, es casi imposible acceder a diplomados, licenciaturas o cursos técnicos superiores.</li>
+                <li><b>Autoestima:</b> El sentimiento de "no haber concluido" un ciclo puede afectar la seguridad personal ante nuevos retos sociales.</li>
+            </ul>
+        </div>
+
+        <div class="info-card">
+            <h3> Impacto Social y Ciudadano</h3>
+            <p>
+                Un ciudadano con educación concluida tiene mejores herramientas para participar activamente en su comunidad:
+            </p>
+            <ul class="highlight-list">
+                <li><b>Red de contactos:</b> Se pierde la oportunidad de crear vínculos con compañeros y mentores que facilitan el éxito profesional.</li>
+                <li><b>Conciencia cívica:</b> Menor acceso a información sobre derechos ciudadanos, salud preventiva y trámites legales.</li>
+                <li><b>Ciclo generacional:</b> Los estudios concluidos tienden a mejorar las expectativas educativas de los futuros hijos.</li>
+                <center>
+    <video class="videoresponsive"controls><source src="vi222.mp4"type="video/mp4"></video>
+      <style>
+          .videoresponsive{
+           width:300px;
+           height:200px;
+           justify-content:center;
+           }
+           </center>
+            </ul>
+        </div>
+    </div>
+</div>
+
+ 
+</body>
+</html>
