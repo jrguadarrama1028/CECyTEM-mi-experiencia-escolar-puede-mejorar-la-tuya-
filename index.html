@@ -1,111 +1,135 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=2.5">
-<title>Guía Digital Ciudadana</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Digital Ciudadana</title>
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-image: url("fondo3.jpg");
-    background-size: cover;
-}
+    <style>
+        :root {
+            --azul: #0000FF;
+            --rosa-hover: #FFC0CB;
+            --texto-claro: #ffffff;
+        }
 
-/* Menú */
-nav {
-    background: #0000FF;
-}
+        body {
+            margin: 0;
+            /* Usamos una fuente más moderna y legible en móviles */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-image: url("fondo3.jpg");
+            background-size: cover;
+            background-attachment: fixed;
+            background-color: #f0f0f0; /* Fondo de respaldo */
+        }
 
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-}
+        /* --- NAVEGACIÓN --- */
+        nav {
+            background: var(--azul);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
 
-nav ul li {
-    position: relative;
-}
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap; /* Permite que los elementos bajen si no caben */
+        }
 
-nav ul li a {
-    display: block;
-    padding: 15px 20px;
-    color: white;
-    text-decoration: none;
-}
+        nav ul li {
+            position: relative;
+        }
 
-nav ul li a:hover {
-    background: #FFC0CB;
-}
+        /* Ajuste de escala para enlaces (Touch Targets) */
+        nav ul li a {
+            display: block;
+            padding: 18px 20px; /* Aumentado para facilitar el toque con el dedo */
+            color: var(--texto-claro);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
 
-/* Submenu */
-nav ul li ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #444;
-    min-width: 180px;
-}
+        nav ul li a:hover {
+            background: var(--rosa-hover);
+            color: #333;
+        }
 
-nav ul li ul li a {
-    padding: 10px 15px;
-}
+        /* Buscador en el menú */
+        .search-item {
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+        }
 
-nav ul li:hover > ul {
-    display: block;
-}
+        .search-item input[type="text"] {
+            padding: 8px;
+            border-radius: 4px;
+            border: none;
+            outline: none;
+        }
 
-/* 🔹 Estilo responsive */
-@media (max-width: 650px) {
-    nav ul {
-        flex-direction: column;
-    }
-    nav ul li ul {
-        position: static;
-    }
-}
-</style>
+        .search-item input[type="submit"] {
+            padding: 8px 12px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
 
+        /* --- 🔹 ESTILO RESPONSIVE (Escala Móvil) --- */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column; /* Menú en lista vertical */
+                width: 100%;
+            }
+
+            nav ul li {
+                width: 100%;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            nav ul li a {
+                padding: 15px 25px; /* Más espacio lateral en móvil */
+                font-size: 16px; /* Escala de texto óptima para móvil */
+            }
+
+            .search-item {
+                width: 100%;
+                box-sizing: border-box;
+                justify-content: center;
+                background: rgba(0,0,0,0.1);
+            }
+        }
+    </style>
 </head>
 
 <body>
 
 <nav>
     <ul>
-        <li><img src="cecytem-logo.png" width="60"></li>
+        <li style="display: flex; align-items: center; padding: 10px 20px;">
+            <img src="cecytem-logo.png" width="50" alt="Logo">
+        </li>
 
-        <li>
+        <li class="search-item">
             <form action="https://www.google.com/search" method="get">
                 <input type="text" name="q" placeholder="Buscar en Google">
-                <input type="submit" value="Buscar">
+                <input type="submit" value="Ir">
             </form>
         </li>
 
-        <li><a href="INFO.html">¿Por qué ocurre el abandono escolar?</a></li>
-
-      
-
-      
-           <li><a href="p2.html">Consecuencias del Abandono Escolar</a><li>
-           
-      
-
-        <li><a href=""> Testimonios de estudiantes (experiencias reales) </a></li>
-    
-        <li><a href="">Cómo prevenir el abandono escolar </a></li>
-
-     <li><a href="">El papel de la familia y la escuela </a></li>
-
-    <li><a href=""> Recursos y apoyo disponible  </a></li>
-
-
-        
-
-      
+        <li><a href="INFO.html">¿Por qué ocurre el abandono?</a></li>
+        <li><a href="p2.html">Consecuencias</a></li>
+        <li><a href="#">Testimonios</a></li>
+        <li><a href="#">Prevención</a></li>
+        <li><a href="#">Familia y Escuela</a></li>
+        <li><a href="#">Recursos</a></li>
+    </ul>
 </nav>
 
 </body>
