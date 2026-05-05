@@ -19,13 +19,13 @@
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             background-color: var(--fondo);
             color: var(--texto);
-            line-height: 1.6;
+            line-height: 1.8;
         }
 
         /* --- NAVEGACIÓN --- */
         nav {
             background: var(--secundario);
-            padding: 10px 20px;
+            padding: 10px 30px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -51,7 +51,6 @@
             border: none;
             outline: none;
             padding: 5px;
-            width: 100px; /* Tamaño reducido para móvil */
         }
 
         /* --- HERO --- */
@@ -59,46 +58,37 @@
             background: linear-gradient(135deg, #2c3e50 0%, #000000 100%);
             color: white;
             text-align: center;
-            padding: 60px 20px;
+            padding: 80px 20px;
         }
 
         .header-impacto h1 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 10px;
         }
 
-        /* --- CONTENIDO PRINCIPAL --- */
+        /* --- CONTENIDO --- */
         .main-container {
             max-width: 1100px;
-            margin: -30px auto 40px;
+            margin: -40px auto 60px;
             background: var(--blanco);
-            padding: 30px;
+            padding: 50px;
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            width: 90%; /* Responsivo */
+            width: 90%;
         }
 
         .intro-text {
             text-align: center;
             font-size: 1.1rem;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             color: #555;
-            text-wrap: balance;
         }
 
-        .img-central {
-            display: block;
-            margin: 0 auto 30px;
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-
-        /* --- GRID DE TARJETAS (IGUAL TAMAÑO) --- */
+        /* --- GRID DE TARJETAS (MISMA ALTURA) --- */
         .info-section {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
             margin-bottom: 30px;
         }
 
@@ -109,8 +99,8 @@
             border: 1px solid #eee;
             transition: all 0.3s ease;
             display: flex;
-            flex-direction: column; /* Para que el contenido interno se estire */
-            text-align: justify; /* Justificado automático */
+            flex-direction: column;
+            text-align: justify; /* Justifica el texto de la tarjeta */
         }
 
         .info-card:hover {
@@ -121,29 +111,44 @@
         .info-card h3 {
             color: var(--primario);
             margin-top: 0;
-            font-size: 1.2rem;
-        }
-
-        /* --- MULTIMEDIA RESPONSIVO --- */
-        .videoresponsive {
-            width: 100%;
-            max-width: 400px;
-            height: auto;
-            margin: 15px auto;
-            display: block;
-            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-align: left; /* Títulos alineados a la izquierda */
         }
 
         .highlight-list {
             padding-left: 20px;
-            margin-top: auto; /* Empuja la lista hacia abajo si hay poco texto */
+            margin-top: 10px;
         }
 
-        /* --- AJUSTES MÓVIL --- */
-        @media (max-width: 600px) {
-            .header-impacto h1 { font-size: 1.6rem; }
-            .main-container { padding: 20px; margin-top: 10px; }
+        .highlight-list li {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: #444;
+        }
+
+        /* --- MULTIMEDIA --- */
+        .videoresponsive {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            margin: 20px auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .img-central {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* --- RESPONSIVO --- */
+        @media (max-width: 850px) {
             .info-section { grid-template-columns: 1fr; }
+            .main-container { padding: 20px; }
         }
     </style>
 </head>
@@ -173,50 +178,62 @@
     <video class="videoresponsive" controls>
         <source src="vi2.mp4" type="video/mp4">
     </video>
-
-    <img src="2.jpg" class="img-central" alt="Imagen informativa">
+ 
+    <img src="2.jpg" class="img-central" width="300" height="300" alt="Imagen principal">
 
     <div class="info-section">
-        <!-- Tarjeta 1 -->
+        <!-- BLOQUE 1 -->
         <div class="info-card">
             <h3>Oportunidades Laborales Escasas</h3>
-            <p>El mercado de trabajo actual es altamente competitivo. No contar con un certificado de estudios limita tu acceso a empleos formales y estables.</p>
+            <p>
+                El mercado de trabajo actual es altamente competitivo y está impulsado por la tecnología. No contar con un certificado de estudios limita tu acceso a empleos formales:
+            </p>
             <ul class="highlight-list">
-                <li><b>Exclusión de filtros:</b> Descarte automático en sistemas de selección.</li>
-                <li><b>Exigencia física:</b> Empleos con mayor desgaste y menos beneficios.</li>
+                <li><b>Exclusión de filtros:</b> Los sistemas de selección automáticos descartan perfiles sin educación básica concluida.</li>
+                <li><b>Trabajos de alta exigencia física:</b> Sin especialización, las opciones suelen reducirse a empleos con mayor desgaste físico y menos beneficios.</li>
+                <li><b>Inestabilidad:</b> Mayor probabilidad de ser reemplazado por la automatización o cambios en la industria.</li>
             </ul>
         </div>
 
-        <!-- Tarjeta 2 -->
+        <!-- BLOQUE 2 -->
         <div class="info-card">
             <h3>Inestabilidad Económica</h3>
-            <p>Existe una correlación directa entre el nivel educativo y los ingresos percibidos a lo largo de la vida laboral:</p>
+            <p>
+                Existe una correlación directa entre el nivel educativo y los ingresos percibidos a lo largo de la vida laboral:
+            </p>
             <ul class="highlight-list">
-                <li><b>Brecha salarial:</b> Diferencia de ingresos de hasta un 60%.</li>
-                <li><b>Falta de prestaciones:</b> Sin seguro médico ni fondos de retiro.</li>
+                <li><b>Brecha salarial:</b> Una persona con estudios concluidos puede ganar, en promedio, entre un 30% y un 60% más que alguien que no terminó.</li>
+                <li><b>Falta de prestaciones:</b> Los empleos informales carecen de seguro médico, fondos de retiro y vacaciones pagadas.</li>
+                <li><b>Dificultad de ahorro:</b> Los salarios bajos dificultan la creación de un patrimonio o la inversión en el futuro.</li>
             </ul>
             <video class="videoresponsive" controls>
                 <source src="vi22.mp4" type="video/mp4">
             </video>
         </div>
 
-        <!-- Tarjeta 3 -->
+        <!-- BLOQUE 3 -->
         <div class="info-card">
             <h3>Limitaciones en el Desarrollo</h3>
-            <p>La educación fomenta habilidades críticas para la vida diaria y la resolución de problemas complejos:</p>
+            <p>
+                La educación no solo enseña materias, sino habilidades críticas para la vida diaria y la resolución de problemas:
+            </p>
             <ul class="highlight-list">
-                <li><b>Pensamiento Crítico:</b> Capacidad de analizar y evitar malas decisiones.</li>
-                <li><b>Autoestima:</b> Impacto en la seguridad personal ante nuevos retos.</li>
+                <li><b>Pensamiento Crítico:</b> La escuela fomenta la capacidad de analizar información y evitar fraudes o malas decisiones.</li>
+                <li><b>Crecimiento estancado:</b> Sin una base educativa, es casi imposible acceder a diplomados, licenciaturas o cursos técnicos superiores.</li>
+                <li><b>Autoestima:</b> El sentimiento de "no haber concluido" un ciclo puede afectar la seguridad personal ante nuevos retos sociales.</li>
             </ul>
         </div>
 
-        <!-- Tarjeta 4 -->
+        <!-- BLOQUE 4 -->
         <div class="info-card">
             <h3>Impacto Social y Ciudadano</h3>
-            <p>Un ciudadano con educación concluida tiene mejores herramientas para participar activamente en su comunidad:</p>
+            <p>
+                Un ciudadano con educación concluida tiene mejores herramientas para participar activamente en su comunidad:
+            </p>
             <ul class="highlight-list">
-                <li><b>Red de contactos:</b> Vínculos que facilitan el éxito profesional.</li>
-                <li><b>Ciclo generacional:</b> Mejora las expectativas de los futuros hijos.</li>
+                <li><b>Red de contactos:</b> Se pierde la oportunidad de crear vínculos con compañeros y mentores que facilitan el éxito profesional.</li>
+                <li><b>Conciencia cívica:</b> Menor acceso a información sobre derechos ciudadanos, salud preventiva y trámites legales.</li>
+                <li><b>Ciclo generacional:</b> Los estudios concluidos tienden a mejorar las expectativas educativas de los futuros hijos.</li>
             </ul>
             <video class="videoresponsive" controls>
                 <source src="vi222.mp4" type="video/mp4">
