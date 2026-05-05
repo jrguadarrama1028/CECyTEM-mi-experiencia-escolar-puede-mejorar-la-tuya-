@@ -7,57 +7,98 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #1e3c72, #2a5298);
       color: white;
+      line-height: 1.6;
     }
 
     header {
       background: rgba(0,0,0,0.7);
-      padding: 30px;
+      padding: 40px 20px;
       text-align: center;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2.8em;
+      font-size: clamp(1.8rem, 5vw, 2.8rem); /* Escala el título según la pantalla */
     }
 
+    /* --- CONTENEDOR GRID PARA TAMAÑOS IGUALES --- */
     section {
-      padding: 40px;
-      text-align: center;
+      padding: 20px;
+      display: grid;
+      /* Crea columnas automáticas de al menos 300px que llenan el espacio */
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .card {
       background: rgba(255,255,255,0.1);
-      margin: 20px auto;
       padding: 25px;
       border-radius: 15px;
-      max-width: 900px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.5);
       transition: transform 0.3s;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      text-align: justify; /* Justificado como pediste antes */
     }
 
     .card:hover {
-      transform: scale(1.03);
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.15);
+    }
+
+    .card h2 {
+      text-align: center;
+      margin-top: 0;
+      color: #00c6ff;
     }
 
     ul {
       text-align: left;
-      max-width: 600px;
-      margin: auto;
+      padding-left: 20px;
+      margin: 15px 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    /* --- VIDEOS RESPONSIVOS --- */
+    .videoresponsive {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-top: auto; /* Empuja el video al final de la tarjeta para que queden alineados */
+      background: #000;
     }
 
     footer {
       background: #000;
       text-align: center;
-      padding: 15px;
+      padding: 20px;
       margin-top: 30px;
     }
 
     .highlight {
       color: #00c6ff;
       font-weight: bold;
+    }
+
+    /* Ajustes específicos para móviles muy pequeños */
+    @media (max-width: 480px) {
+      section {
+        grid-template-columns: 1fr; /* Una sola columna en celulares pequeños */
+        padding: 15px;
+      }
+      
+      header {
+        padding: 20px 10px;
+      }
     }
 
   </style>
@@ -70,15 +111,17 @@
 </header>
 
 <section>
+  <!-- TARJETA 1 -->
   <div class="card">
     <h2>¿Qué es el abandono escolar?</h2>
     <p>El <span class="highlight">abandono escolar</span> se refiere a la situación en la que un estudiante deja de asistir a la escuela antes de concluir su formación académica. Este fenómeno afecta tanto a nivel individual como social, ya que limita el desarrollo personal y reduce las oportunidades de crecimiento económico.</p>
     <p>Es un problema presente en muchos países y está relacionado con factores sociales, económicos y educativos.</p>
     <video class="videoresponsive" controls>
-                <source src="vi1.mp4" type="video/mp4">
-            </video>
+      <source src="vi1.mp4" type="video/mp4">
+    </video>
   </div>
 
+  <!-- TARJETA 2 -->
   <div class="card">
     <h2>Principales causas</h2>
     <ul>
@@ -90,6 +133,7 @@
     </ul>
   </div>
 
+  <!-- TARJETA 3 -->
   <div class="card">
     <h2>Consecuencias</h2>
     <ul>
@@ -100,10 +144,11 @@
       <li><span class="highlight">Impacto en el país:</span> Menor desarrollo económico y social.</li>
     </ul>
     <video class="videoresponsive" controls>
-                <source src="vi11.mp4" type="video/mp4">
-            </video>
+      <source src="vi11.mp4" type="video/mp4">
+    </video>
   </div>
 
+  <!-- TARJETA 4 -->
   <div class="card">
     <h2>Posibles soluciones</h2>
     <p>Para combatir el abandono escolar es necesario un esfuerzo conjunto:</p>
@@ -116,17 +161,20 @@
     </ul>
   </div>
 
+  <!-- TARJETA 5 -->
   <div class="card">
-    <h2>Importancia de continuar estudiando</h2>
+    <h2>Importancia de estudiar</h2>
     <p>La educación es una herramienta clave para mejorar la calidad de vida. Continuar estudiando permite desarrollar habilidades, acceder a mejores oportunidades y contribuir al crecimiento de la sociedad.</p>
     <p>Invertir en educación es invertir en el futuro.</p>
     <video class="videoresponsive" controls>
-                <source src="vi111.mp4" type="video/mp4">
-            </video>
+      <source src="vi111.mp4" type="video/mp4">
+    </video>
   </div>
 </section>
 
-
+<footer>
+  <p>&copy; 2026 - Concientización sobre el Abandono Escolar</p>
+</footer>
 
 </body>
 </html>
