@@ -25,13 +25,13 @@
     }
 
     header {
-      padding: 80px 20px;
+      padding: 60px 20px;
       text-align: center;
       background: linear-gradient(135deg, rgba(0,255,136,0.1), rgba(96,239,255,0.1));
     }
 
     header h1 {
-      font-size: 3rem;
+      font-size: clamp(1.8rem, 5vw, 3rem); /* Escala según el dispositivo */
       margin: 0;
       color: var(--secondary);
     }
@@ -39,48 +39,59 @@
     header p {
       max-width: 700px;
       margin: 15px auto;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       opacity: 0.8;
     }
 
+    /* --- CONTENEDOR GRID PARA TAMAÑOS SIMÉTRICOS --- */
     .main-content {
-      max-width: 1000px;
+      max-width: 1200px;
       margin: 40px auto;
       padding: 0 20px;
+      display: grid;
+      /* Define columnas automáticas que siempre miden lo mismo en una fila */
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      align-items: stretch; /* Fuerza a que todas midan lo mismo de alto */
     }
 
     .info-section {
       background: var(--card-bg);
       border-left: 5px solid var(--primary);
       border-radius: 15px;
-      padding: 40px;
-      margin-bottom: 30px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column; /* Organiza el contenido internamente */
       transition: 0.3s;
+      text-align: justify; /* Justificado como solicitaste */
     }
 
     .info-section:hover {
-      transform: scale(1.01);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0,255,136,0.1);
     }
 
     .info-section h2 {
       margin-top: 0;
       color: var(--primary);
+      font-size: 1.4rem;
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
-      gap: 15px;
+      gap: 10px;
     }
 
     .info-section h3 {
       color: var(--secondary);
-      margin-top: 25px;
-      font-size: 1.1rem;
+      margin-top: 20px;
+      font-size: 0.95rem;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
 
     .info-section p, .info-section li {
       color: #cbd5e1;
+      font-size: 0.95rem;
     }
 
     .badge {
@@ -88,28 +99,45 @@
       color: var(--primary);
       padding: 4px 12px;
       border-radius: 20px;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: bold;
     }
 
     ul {
       padding-left: 20px;
+      margin-bottom: 20px;
     }
 
     li {
-      margin-bottom: 12px;
+      margin-bottom: 8px;
+    }
+
+    /* --- VIDEOS PROPORCIONALES --- */
+    .videoresponsive {
+      width: 100%;
+      aspect-ratio: 16 / 9; /* Proporción móvil perfecta */
+      border-radius: 10px;
+      margin-top: auto; /* Empuja el video siempre al fondo de la tarjeta */
+      background: #000;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
     }
 
     footer {
       text-align: center;
       padding: 50px;
       opacity: 0.5;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
     }
 
-    @media (max-width: 600px) {
-      header h1 { font-size: 2rem; }
-      .info-section { padding: 25px; }
+    /* Ajustes para móviles pequeños */
+    @media (max-width: 480px) {
+      .main-content {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+      }
+      .info-section {
+        padding: 20px;
+      }
     }
   </style>
 </head>
@@ -122,57 +150,73 @@
 
 <div class="main-content">
 
+  <!-- SECCIÓN 01 -->
   <section class="info-section">
-    <h2><span>01</span> Organización del Tiempo <span class="badge">Estructural</span></h2>
+    <h2><span>01</span> Organización <span class="badge">Estructural</span></h2>
     <p>El tiempo no se "encuentra", se construye. Organizarse reduce la ansiedad que provoca ver una montaña de tareas pendientes.</p>
     
     <h3>Técnicas Clave:</h3>
     <ul>
-      <li><strong>Matriz de Prioridades:</strong> Clasifica tus actividades. Lo <em>importante</em> (estudiar para el examen final) debe ir antes que lo <em>urgente</em> (responder mensajes rápidos).</li>
-      <li><strong>Regla de los 2 Minutos:</strong> Si una tarea escolar te toma menos de dos minutos (como enviar un correo o guardar un archivo), hazla de inmediato para no saturar tu mente.</li>
-      <li><strong>Auditoría de Distracciones:</strong> Identifica qué aplicaciones te roban más tiempo y usa bloqueadores de apps durante tus bloques de estudio profundo.</li>
+      <li><strong>Matriz de Prioridades:</strong> Clasifica tus actividades según importancia.</li>
+      <li><strong>Regla de los 2 Minutos:</strong> Tareas rápidas se hacen al instante.</li>
+      <li><strong>Auditoría de Distracciones:</strong> Identifica apps que roban tu tiempo.</li>
     </ul>
+    <video class="videoresponsive" controls>
+      <source src="vi4.mp4" type="video/mp4">
+    </video>
   </section>
 
+  <!-- SECCIÓN 02 -->
   <section class="info-section">
-    <h2><span>02</span> Apoyo de Docentes <span class="badge">Relacional</span></h2>
-    <p>Los profesores son tu mayor recurso. No son solo evaluadores, son mentores que quieren verte triunfar.</p>
+    <h2><span>02</span> Apoyo Docente <span class="badge">Relacional</span></h2>
+    <p>Los profesores son tu mayor recurso. No son solo evaluadores, son mentores que quieren verte triunfar en tu carrera.</p>
     
     <h3>Cómo interactuar eficazmente:</h3>
     <ul>
-      <li><strong>Participación Proactiva:</strong> No esperes al final del semestre. Haz preguntas durante la clase; esto le indica al docente que tienes interés real.</li>
-      <li><strong>Solicitud de Retroalimentación:</strong> Después de un examen o trabajo, pregunta: <em>"¿En qué áreas específicas puedo mejorar para la próxima vez?"</em>. Esto convierte un error en un aprendizaje.</li>
-      <li><strong>Tutorías Específicas:</strong> Si sientes que un tema (como cálculo o física) te sobrepasa, pide una sesión breve de asesoría. Explicar tus dudas puntuales ayuda al docente a ayudarte mejor.</li>
+      <li><strong>Participación Proactiva:</strong> Haz preguntas constantes en clase.</li>
+      <li><strong>Retroalimentación:</strong> Pregunta siempre cómo mejorar tras un error.</li>
+      <li><strong>Tutorías Específicas:</strong> Pide asesoría puntual en temas difíciles.</li>
     </ul>
+    <!-- Se mantiene el diseño aunque no haya video aquí para que la altura sea igual -->
   </section>
 
+  <!-- SECCIÓN 03 -->
   <section class="info-section">
-    <h2><span>03</span> Mantener Metas Claras <span class="badge">Psicológico</span></h2>
+    <h2><span>03</span> Metas Claras <span class="badge">Psicológico</span></h2>
     <p>La motivación es volátil, pero la disciplina basada en metas es constante. Necesitas un "por qué" poderoso.</p>
     
     <h3>Desarrollo de Metas:</h3>
     <ul>
-      <li><strong>Visualización de Largo Plazo:</strong> Piensa en tu vida a los 25 años. ¿Qué carrera quieres? ¿A qué lugares quieres viajar? Tu estudio actual es el pago inicial para ese futuro.</li>
-      <li><strong>Metas SMART:</strong> No digas "quiero mejorar". Di: "Voy a subir mi promedio de 7.5 a 8.5 este trimestre dedicando 1 hora diaria a matemáticas".</li>
-      <li><strong>El Sistema de Recompensas:</strong> Tu cerebro necesita incentivos. Al terminar una jornada pesada, permítete algo que disfrutes (un juego, un episodio de una serie) como premio al esfuerzo.</li>
+      <li><strong>Visualización:</strong> Proyecta tu éxito a los 25 años.</li>
+      <li><strong>Metas SMART:</strong> Objetivos específicos y medibles.</li>
+      <li><strong>Sistema de Recompensas:</strong> Premia tu cerebro tras el esfuerzo.</li>
     </ul>
+    <video class="videoresponsive" controls>
+      <source src="vi4.mp4" type="video/mp4">
+    </video>
   </section>
 
+  <!-- SECCIÓN 04 -->
   <section class="info-section">
-    <h2><span>04</span> Estrategias de Estudio <span class="badge">Cognitivo</span></h2>
-    <p>Estudiar más horas no es mejor; estudiar con mejores métodos sí lo es. El objetivo es mover la información de la memoria corta a la memoria larga.</p>
+    <h2><span>04</span> Estrategias <span class="badge">Cognitivo</span></h2>
+    <p>Estudiar más horas no es mejor; estudiar con mejores métodos sí lo es. Mueve la información a tu memoria de largo plazo.</p>
     
     <h3>Métodos de Alto Rendimiento:</h3>
     <ul>
-      <li><strong>Recuerdo Activo (Active Recall):</strong> No leas tus notas una y otra vez. Cierra el cuaderno e intenta escribir todo lo que recuerdas del tema desde cero.</li>
-      <li><strong>Repetición Espaciada:</strong> Repasa un tema hoy, luego en 3 días, luego en una semana. Esto combate la "curva del olvido".</li>
-      <li><strong>Técnica de Feynman:</strong> Intenta explicar un concepto complejo como si se lo enseñaras a un niño. Si te trabas en una parte, ahí es donde necesitas reforzar tu estudio.</li>
+      <li><strong>Active Recall:</strong> Intenta recordar todo sin ver tus notas.</li>
+      <li><strong>Repetición Espaciada:</strong> Repasa en intervalos de días.</li>
+      <li><strong>Técnica de Feynman:</strong> Explica el tema como si fueras un niño.</li>
     </ul>
+    <video class="videoresponsive" controls>
+      <source src="vi444.mp4" type="video/mp4">
+    </video>
   </section>
 
 </div>
 
-
+<footer>
+  <p>&copy; 2026 Manual de Permanencia Escolar. Todos los derechos reservados.</p>
+</footer>
 
 </body>
 </html>
