@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beneficios de la Prepa | Datos de Impacto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #050505; /* Fondo más oscuro para contraste */
+      --card-bg: #111111;
+      --primary: #ff007a; /* Rosa Neón */
+      --secondary: #bc13fe; /* Morado Eléctrico */
+      --accent: #00f2ff; /* Cian Neón */
+      --text: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      padding: 80px 20px;
+      text-align: center;
+      /* Gradiente más llamativo */
+      background: linear-gradient(135deg, rgba(255,0,122,0.15), rgba(188,19,254,0.15));
+      border-bottom: 2px solid var(--primary);
+    }
+
+    header h1 {
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      margin: 0;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    header p {
+      max-width: 700px;
+      margin: 15px auto;
+      font-size: 1.2rem;
+      color: var(--accent);
+      font-weight: 300;
+    }
+
+    .main-content {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      align-items: stretch; /* Mantiene cuadros del mismo tamaño */
+    }
+
+    .info-section {
+      background: var(--card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-top: 5px solid var(--secondary); /* Línea superior llamativa */
+      border-radius: 20px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.4s ease;
+      text-align: justify;
+    }
+
+    .info-section:hover {
+      transform: translateY(-15px);
+      border-top: 5px solid var(--accent);
+      box-shadow: 0 0 30px rgba(188, 19, 254, 0.3);
+    }
+
+    .info-section h2 {
+      margin-top: 0;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 1.6rem;
+    }
+
+    .info-section h3 {
+      color: var(--accent);
+      margin-top: 25px;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .badge {
+      background: var(--primary);
+      color: white;
+      padding: 5px 15px;
+      border-radius: 5px;
+      font-size: 0.7rem;
+      font-weight: bold;
+      box-shadow: 0 0 10px var(--primary);
+    }
+
+    .videoresponsive {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 12px;
+      margin-top: auto;
+      background: #000;
+      box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+    }
+
+    footer {
+      text-align: center;
+      padding: 60px;
+      color: var(--secondary);
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 600px) {
+      .main-content { grid-template-columns: 1fr; }
+      .info-section { padding: 30px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Poder Estudiantil</h1>
+  <p>Descubre por qué la preparatoria es tu mejor ventaja competitiva en el mundo real.</p>
+</header>
+
+<div class="main-content">
+
+  <!-- DATO 01 -->
+  <section class="info-section">
+    <h2><span>01</span> Impulso Económico <span class="badge">FINANZAS</span></h2>
+    <p>Terminar la preparatoria no es solo un papel, es dinero en tu bolsillo. Los graduados tienen acceso a empleos con prestaciones y salarios que superan por mucho el sueldo mínimo promedio.</p>
+    
+    <h3>¿Sabías que?</h3>
+    <ul>
+      <li><strong>Crecimiento:</strong> El ingreso promedio aumenta un 35% al obtener tu certificado.</li>
+      <li><strong>Seguridad:</strong> Tienes acceso a seguro social y fondos para el retiro (Afore).</li>
+    </ul>
+    <video class="videoresponsive" controls>
+      <source src="vi3.mp4" type="video/mp4">
+    </video>
+  </section>
+
+  <!-- DATO 02 -->
+  <section class="info-section">
+    <h2><span>02</span> Tu Red de Poder <span class="badge">SOCIAL</span></h2>
+    <p>En la prepa conoces a las personas que te acompañarán en tus futuros proyectos. Es el lugar perfecto para desarrollar liderazgo y carisma.</p>
+    
+    <h3>Ventajas:</h3>
+    <ul>
+      <li><strong>Amistades:</strong> Creas vínculos que duran décadas.</li>
+      <li><strong>Soft Skills:</strong> Mejoras tu forma de hablar y convencer a los demás.</li>
+    </ul>
+    <video class="videoresponsive" controls>
+      <source src="vi33.mp4" type="video/mp4">
+    </video>
+  </section>
+
+  <!-- DATO 03 -->
+  <section class="info-section">
+    <h2><span>03</span> Mente Blindada <span class="badge">PSICOLOGÍA</span></h2>
+    <p>La educación entrena tu cerebro para resolver problemas bajo presión. Esto te da una ventaja enorme sobre quienes no terminaron sus estudios.</p>
+    
+    <h3>Impacto:</h3>
+    <ul>
+      <li><strong>Confianza:</strong> Terminar una meta difícil te hace sentir imparable.</li>
+      <li><strong>Criterio:</strong> Nadie te engaña fácilmente porque sabes analizar la información.</li>
+    </ul>
+   
+  </section>
+
+  <!-- DATO 04 -->
+  <section class="info-section">
+    <h2><span>04</span> Puerta al Éxito <span class="badge">PRO</span></h2>
+    <p>La preparatoria es el requisito indispensable para cualquier carrera del futuro: desde ser un gran Ingeniero hasta un exitoso Influencer o Programador.</p>
+    
+    <h3>El Siguiente Paso:</h3>
+    <ul>
+      <li><strong>Especialización:</strong> Es el trampolín hacia la universidad de tus sueños.</li>
+      <li><strong>Libertad:</strong> Te da la opción de elegir qué quieres hacer, en lugar de aceptar lo único que haya disponible.</li>
+    </ul>
+    <video class="videoresponsive" controls>
+      <source src="vi333.mp4" type="video/mp4">
+    </video>
+  </section>
+
+</div>
+
+
+</body>
+</html>
