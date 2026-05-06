@@ -3,155 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plantel Valle de Bravo</title>
+    <title>Plantel Valle de Bravo - Galería 3D</title>
     
     <style>
-   
-        .fondo-valle{
-            background-image: linear-gradient(to top, #0593bb 20%, #0e26ae 80%);
-            background-size: cover;
-            background-position: center center;
-            width: 100%;
-            height: 80vh;
-            background-attachment: fixed;
-          }
-        .contenido-fondo-valle{
+        body {
+            margin: 0;
+            background: #f0f0f0;
+            font-family: sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Estilos del Fondo y Ondas (Tu código base) */
+        .header {
+            position: relative;
+            background: linear-gradient(to top, #0593bb 20%, #0e26ae 80%);
+            height: 40vh;
             display: flex;
-            width: 100%;
-            height: 100%;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-          }
-      @keyframes move_wave {
-          0% {
-              transform: translateX(0) translateZ(0) scaleY(1)
-          }
-          50% {
-              transform: translateX(-25%) translateZ(0) scaleY(0.55)
-          }
-          100% {
-              transform: translateX(-50%) translateZ(0) scaleY(1)
-          }
-      }
-      .waveWrapper {
-          overflow: hidden;
-          position: absolute;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          top: 0;
-          margin: auto;
-      }
-      .waveWrapperInner {
-          position: absolute;
-          width: 100%;
-          overflow: hidden;
-          height: 70%;
-    
-          
-      }
-      .bgTop {
-          z-index: 15;
-          opacity: 0.5;
-      }
-      .bgMiddle {
-          z-index: 10;
-          opacity: 0.75;
-      }
-      .bgBottom {
-          z-index: 5;
-      }
-      .wave {
-          position: absolute;
-          left: 0;
-          width: 200%;
-          height: 100%;
-          background-repeat: repeat no-repeat;
-          background-position: 0 bottom;
-          transform-origin: center bottom;
-      }
-      .waveTop {
-          background-size: 50% 100px;
-      }
-      .waveAnimation .waveTop {
-        animation: move-wave 3s;
-         -webkit-animation: move-wave 3s;
-         -webkit-animation-delay: 1s;
-         animation-delay: 1s;
-      }
-      .waveMiddle {
-          background-size: 50% 120px;
-      }
-      .waveAnimation .waveMiddle {
-          animation: move_wave 10s linear infinite;
-      }
-      .waveBottom {
-          background-size: 50% 100px;
-      }
-      .waveAnimation .waveBottom {
-          animation: move_wave 15s linear infinite;
-      }
-      </style>
-      
-      
-        <script>
-        window.console = window.console || function(t) {};
-      </script>
+            color: white;
+        }
+
+        .agua {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 10vh;
+            min-height: 100px;
+        }
+
+        .parallax > use {
+            animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+        }
+        .parallax > use:nth-child(1) { animation-delay: -2s; animation-duration: 7s; }
+        .parallax > use:nth-child(2) { animation-delay: -3s; animation-duration: 10s; }
+        .parallax > use:nth-child(3) { animation-delay: -4s; animation-duration: 13s; }
+        .parallax > use:nth-child(4) { animation-delay: -5s; animation-duration: 20s; }
+
+        @keyframes move-forever {
+            0% { transform: translate3d(-90px,0,0); }
+            100% { transform: translate3d(85px,0,0); }
+        }
+
+        /* --- NUEVA GALERÍA 3D --- */
+        h2 {
+            text-align: center;
+            padding: 50px 0;
+            color: #333;
+        }
+
+        .content-all {
+            width: 200px; /* Tamaño de la imagen */
+            height: 150px;
+            margin: 80px auto;
+            perspective: 1000px; /* Profundidad */
+            position: relative;
+        }
+
+        .content-carrousel {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            animation: rotar 20s linear infinite; /* Velocidad de giro */
+        }
+
+        /* Pausa al pasar el mouse */
+        .content-carrousel:hover {
+            animation-play-state: paused;
+            cursor: pointer;
+        }
+
+        .content-carrousel figure {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            border: 5px solid #fff;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+            margin: 0;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .content-carrousel figure img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 300s;
+        }
+
+        /* Posicionamiento Circular de las 5 imágenes */
+        /* Fórmula: 360 grados / 5 imágenes = 72 grados por salto */
+        /* translateZ determina el radio del círculo */
+        .content-carrousel figure:nth-child(1) { transform: rotateY(0deg) translateZ(250px); }
+        .content-carrousel figure:nth-child(2) { transform: rotateY(72deg) translateZ(250px); }
+        .content-carrousel figure:nth-child(3) { transform: rotateY(144deg) translateZ(250px); }
+        .content-carrousel figure:nth-child(4) { transform: rotateY(216deg) translateZ(250px); }
+        .content-carrousel figure:nth-child(5) { transform: rotateY(288deg) translateZ(250px); }
+
+        @keyframes rotar {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(360deg); }
+        }
+
+        .separador { height: 100px; }
+    </style>
 </head>
 <body>
+
     <div class="header">
-
-        <!--Content before waves-->
-        <div class="inner-header flex">
-            <div class="logo">
-            </div>
-            <center>
-       
-    </center>
-        </div>
-        
-        <!--Waves Container-->
-        <div>
-        <svg class="agua" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-        viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-        <defs>
-        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-        </defs>
-        <g class="parallax">
-        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
-        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
-        <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-        </g>
+        <h1>Plantel Valle de Bravo</h1>
+        <svg class="agua" xmlns="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)" />
+                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+            </g>
         </svg>
-        </div>
-        </div>
-   
+    </div>
 
-
-        
-        <div id="gallery1" class="gallery2">
-            <section >
-    
-                <h2>Datos personales</h2>
-                <div class="content-all">
-                    <div class="content-carrousel">
-                        <figure><img src="11.jpeg"></figure>
-                        <figure><img src="12.jpeg"></figure>
-                        <figure><img src="13.jpeg"></figure>
-                       <figure><img src="14.jpeg"></figure>
-                        <figure><img src="15.jpeg"></figure>
-                        
-                    </div>
-                </div>
-                
-            </section>
+    <div id="gallery1">
+        <h2>Datos personales</h2>
+        <div class="content-all">
+            <div class="content-carrousel">
+                <figure><img src="11.jpeg" alt="img1"></figure>
+                <figure><img src="12.jpeg" alt="img2"></figure>
+                <figure><img src="13.jpeg" alt="img3"></figure>
+                <figure><img src="14.jpeg" alt="img4"></figure>
+                <figure><img src="15.jpeg" alt="img5"></figure>
             </div>
-       
-    
+        </div>
+    </div>
+
     <div class="separador"></div>
 
-      
 </body>
 </html>
