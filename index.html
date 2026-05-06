@@ -4,133 +4,233 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guía Digital Ciudadana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --azul: #0000FF;
-            --rosa-hover: #FFC0CB;
-            --texto-claro: #ffffff;
+            --bg-dark: #0f172a;
+            --card-bg: #1e293b;
+            --primary-neon: #00f2ff;
+            --secondary-neon: #7000ff;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
         }
+
+        * { box-sizing: border-box; }
 
         body {
             margin: 0;
-            /* Usamos una fuente más moderna y legible en móviles */
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-image: url("fondo3.jpg");
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            /* Si tienes una imagen de fondo, se mezcla con el color oscuro */
+            background-image: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url("fondo3.jpg");
             background-size: cover;
             background-attachment: fixed;
-            background-color: #f0f0f0; /* Fondo de respaldo */
         }
 
-        /* --- NAVEGACIÓN --- */
+        /* --- NAVEGACIÓN MODERNA --- */
         nav {
-            background: var(--azul);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 242, 255, 0.2);
+            padding: 10px 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo-area img {
+            height: 45px;
+            width: auto;
+            filter: drop-shadow(0 0 5px var(--primary-neon));
         }
 
         nav ul {
             list-style: none;
+            display: flex;
+            gap: 10px;
             margin: 0;
             padding: 0;
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap; /* Permite que los elementos bajen si no caben */
         }
 
-        nav ul li {
-            position: relative;
-        }
-
-        /* Ajuste de escala para enlaces (Touch Targets) */
         nav ul li a {
-            display: block;
-            padding: 18px 20px; /* Aumentado para facilitar el toque con el dedo */
-            color: var(--texto-claro);
+            color: var(--text-main);
             text-decoration: none;
-            font-size: 15px;
-            font-weight: 500;
-            transition: background 0.3s;
+            font-size: 0.95rem;
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: 0.3s;
         }
 
         nav ul li a:hover {
-            background: var(--rosa-hover);
-            color: #333;
+            background: rgba(0, 242, 255, 0.1);
+            color: var(--primary-neon);
         }
 
-        /* Buscador en el menú */
-        .search-item {
-            padding: 10px 20px;
+        /* --- BUSCADOR ESTILIZADO --- */
+        .search-box {
             display: flex;
-            align-items: center;
+            background: var(--card-bg);
+            border-radius: 50px;
+            padding: 5px 15px;
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
-        .search-item input[type="text"] {
-            padding: 8px;
-            border-radius: 4px;
+        .search-box input {
+            background: transparent;
             border: none;
-            outline: none;
-        }
-
-        .search-item input[type="submit"] {
-            padding: 8px 12px;
-            background: #333;
             color: white;
-            border: none;
-            border-radius: 4px;
-            margin-left: 5px;
-            cursor: pointer;
+            padding: 8px;
+            outline: none;
+            width: 150px;
         }
 
-        /* --- 🔹 ESTILO RESPONSIVE (Escala Móvil) --- */
-        @media (max-width: 768px) {
+        .search-box button {
+            background: var(--primary-neon);
+            border: none;
+            border-radius: 50px;
+            padding: 5px 15px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .search-box button:hover {
+            box-shadow: 0 0 15px var(--primary-neon);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            background: linear-gradient(to right, var(--primary-neon), var(--secondary-neon));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        /* --- GRID DE CONTENIDO --- */
+        .grid-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto 50px auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-neon);
+            box-shadow: 0 10px 30px rgba(0, 242, 255, 0.1);
+        }
+
+        .card h3 {
+            color: var(--primary-neon);
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+
+        /* --- RESPONSIVE MÓVIL --- */
+        @media (max-width: 850px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
             nav ul {
-                flex-direction: column; /* Menú en lista vertical */
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                width: 100%;
+                text-align: center;
+            }
+
+            .search-box {
                 width: 100%;
             }
 
-            nav ul li {
+            .search-box input {
                 width: 100%;
-                border-bottom: 1px solid rgba(255,255,255,0.1);
-            }
-
-            nav ul li a {
-                padding: 15px 25px; /* Más espacio lateral en móvil */
-                font-size: 16px; /* Escala de texto óptima para móvil */
-            }
-
-            .search-item {
-                width: 100%;
-                box-sizing: border-box;
-                justify-content: center;
-                background: rgba(0,0,0,0.1);
             }
         }
     </style>
 </head>
-
 <body>
 
 <nav>
-    <ul>
-        <li style="display: flex; align-items: center; padding: 10px 20px;">
-            <img src="cecytem-logo.png" width="50" alt="Logo">
-        </li>
+    <div class="nav-container">
+        <div class="logo-area">
+            <img src="cecytem-logo.png" alt="Cecytem Logo">
+        </div>
 
-        <li class="search-item">
-            <form action="https://www.google.com/search" method="get">
-                <input type="text" name="q" placeholder="Buscar en Google">
-                <input type="submit" value="Ir">
-            </form>
-        </li>
+        <form class="search-box" action="https://www.google.com/search" method="get">
+            <input type="text" name="q" placeholder="Buscar en Google...">
+            <button type="submit">Ir</button>
+        </form>
 
-        <li><a href="INFO.html">¿Por qué ocurre el abandono?</a></li>
-        <li><a href="p2.html">Consecuencias</a></li>
-        <li><a href="#">Testimonios</a></li>
-        <li><a href="p4.html">Prevención</a></li>
-        <li><a href="p5.html">Familia y Escuela</a></li>
-        <li><a href="#">Recursos</a></li>
-    </ul>
+        <ul>
+            <li><a href="p4.html">Prevención</a></li>
+            <li><a href="p5.html">Familia</a></li>
+            <li><a href="#">Recursos</a></li>
+        </ul>
+    </div>
 </nav>
+
+<main>
+    <header class="hero">
+        <h1>Guía Digital Ciudadana</h1>
+        <p>Un espacio dedicado a entender, prevenir y combatir el abandono escolar mediante el apoyo mutuo y la información estratégica.</p>
+    </header>
+
+    <section class="grid-links">
+        <a href="INFO.html" class="card">
+            <h3>¿Por qué ocurre?</h3>
+            <p>Explora las causas principales detrás del abandono escolar.</p>
+        </a>
+
+        <a href="p2.html" class="card">
+            <h3>Consecuencias</h3>
+            <p>El impacto a largo plazo en la vida del estudiante y la sociedad.</p>
+        </a>
+
+        <a href="p3.html" class="card">
+            <h3>Testimonios</h3>
+            <p>Historias reales y experiencias compartidas por la comunidad.</p>
+        </a>
+    </section>
+</main>
 
 </body>
 </html>
