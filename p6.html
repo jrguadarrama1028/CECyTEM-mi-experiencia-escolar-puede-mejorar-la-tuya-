@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recursos y Apoyo | Soluciones Reales</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #050505;
+      --card-bg: #111111;
+      --primary: #ff007a; /* Rosa Neón */
+      --secondary: #bc13fe; /* Morado Eléctrico */
+      --accent: #00f2ff; /* Cian Neón */
+      --text: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 60px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(255,0,122,0.1), rgba(188,19,254,0.1));
+      border-bottom: 2px solid var(--secondary);
+    }
+
+    header h1 {
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      margin: 0;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+
+    header p {
+      max-width: 700px;
+      margin: 15px auto;
+      font-size: 1.1rem;
+      opacity: 0.8;
+    }
+
+    /* --- GRID DE SOLUCIONES --- */
+    .main-content {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      align-items: stretch;
+    }
+
+    .resource-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      flex-direction: column;
+      transition: 0.3s;
+    }
+
+    .resource-card:hover {
+      box-shadow: 0 0 20px rgba(188, 19, 254, 0.2);
+      border-color: var(--secondary);
+    }
+
+    .resource-card h2 {
+      color: var(--primary);
+      font-size: 1.4rem;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .resource-card p {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      text-align: justify;
+    }
+
+    /* --- BOTONES DE ACCIÓN REAL --- */
+    .btn-action {
+      display: inline-block;
+      margin-top: auto;
+      padding: 12px;
+      background: linear-gradient(to right, var(--secondary), var(--primary));
+      color: white;
+      text-decoration: none;
+      text-align: center;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: 0.3s;
+    }
+
+    .btn-action:hover {
+      filter: brightness(1.2);
+      box-shadow: 0 5px 15px rgba(255, 0, 122, 0.4);
+    }
+
+    .contact-info {
+      background: rgba(0, 242, 255, 0.05);
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 15px;
+      border-left: 3px solid var(--accent);
+    }
+
+    .contact-info span {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--accent);
+    }
+
+    .video-box {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 10px;
+      margin-top: 20px;
+      background: #000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: var(--accent);
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 600px) {
+      .main-content { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Recursos y Apoyo Disponible</h1>
+  <p>No estás solo en este proceso. Aquí tienes herramientas reales para superar cualquier obstáculo académico o personal.</p>
+</header>
+
+<div class="main-content">
+
+  <!-- SERVICIO 01 -->
+  <section class="resource-card">
+    <h2>Tutorías Escolares</h2>
+    <p>¿Sientes que te quedas atrás en una materia? Las tutorías no son clases extra, son espacios para resolver dudas específicas con expertos.</p>
+    <div class="contact-info">
+      <span>📍 Ubicación: Cubículo de asesorías</span>
+      <span>⏰ Horario: 2:00 PM - 5:00 PM</span>
+    </div>
+    <video class="video-box" controls>
+      <source src="vi6.mp4" type="video/mp4">
+    </video>
+    
+  </section>
+
+  <!-- SERVICIO 02 -->
+  <section class="resource-card">
+    <h2>Apoyo Psicológico</h2>
+    <p>La salud mental es prioridad. Contamos con especialistas listos para escucharte y ayudarte a manejar el estrés, la ansiedad o problemas familiares.</p>
+    <div class="contact-info">
+      <span> Privacidad: 100% Confidencial</span>
+      <span> Atención: Individual o Grupal</span>
+    </div>
+    <video class="video-box" controls>
+      <source src="vi66.mp4" type="video/mp4">
+    </video>
+    
+  </section>
+
+  <!-- SERVICIO 03 -->
+  <section class="resource-card">
+    <h2>Becas y Economía</h2>
+    <p>Que el dinero no sea el motivo para dejar tus sueños. Te asesoramos para aplicar a becas estatales, federales y apoyos internos del plantel.</p>
+    <div class="contact-info">
+      <span> Tipo: Manutención y Excelencia</span>
+      <span> Requisito: Documentación básica</span>
+    </div>
+    <video class="video-box" controls>
+      <source src="vi666.mp4" type="video/mp4">
+    </video>
+   
+  </section>
+
+  <!-- SERVICIO 04 -->
+  <section class="resource-card">
+    <h2>Contactos Directos</h2>
+    <p>Comunicación directa con las autoridades del plantel para resolver trámites administrativos, dudas de inscripción o reportar problemas.</p>
+    <div class="contact-info">
+      <span>📞 Tel: 726 251 42 61</span>
+      <span>📧 Email: plantel.valledebravo@cecytem.mx</span>
+    </div>
+    <video class="video-box" controls>
+      <source src="recurso4.mp4" type="video/mp4">
+    </video>
+    <a href="tel: 726 251 42 61" class="btn-action">Llamar a Dirección</a>
+  </section>
+
+</div>
+
+<footer>
+  <p>CENTRO DE APOYO ESTUDIANTIL 2026 • POR TU PERMANENCIA ESCOLAR</p>
+</footer>
+
+</body>
+</html>
